@@ -12,6 +12,7 @@ public class Livro implements Serializable {
     private String autor;
     private StatusLivro status;
     private String resumo;
+    private Long idUsuario;
     private LocalDate criacao;
     private LocalDate atualizacao;
 }

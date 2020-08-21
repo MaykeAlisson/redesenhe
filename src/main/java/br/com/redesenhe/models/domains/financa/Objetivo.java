@@ -12,6 +12,7 @@ public class Objetivo implements Serializable {
     private List<Lancamento> lancamentos;
     private BigDecimal objetivo;
     private BigDecimal vlrAtual;
+    private Long idUsuario;
     private LocalDate criacao;
     private LocalDate atualizacao;
 }
