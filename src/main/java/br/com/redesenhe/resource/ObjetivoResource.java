@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @ApplicationScoped
-@Path("/objetivo")
+@Path("/api/objetivo")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ObjetivoResource {
@@ -26,6 +26,7 @@ public class ObjetivoResource {
     }
 
     @GET
+    @Path("/v1/objetivo")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Objetivo> getObjetivosUsuario() {
         Long idUsuario = 1L;
@@ -36,7 +37,7 @@ public class ObjetivoResource {
     }
 
     @POST
-//    @Path("/add/products")
+    @Path("/v1/objetivo")
     @Produces("application/json")
     public Response addProduct(Objetivo objetivo) {
 //        productService.addProduct(product);
