@@ -39,7 +39,25 @@ public class ObjetivoResource {
     @POST
     @Path("/v1/objetivo")
     @Produces("application/json")
-    public Response addProduct(Objetivo objetivo) {
+    public Response addObjetivo(Objetivo objetivo) {
+//        productService.addProduct(product);
+        return Response.ok().build();
+    }
+
+    @PUT
+    @Path("/v1/objetivo")
+    @PathParam("id")
+    @Produces("application/json")
+    public Response updateObjetivo(Objetivo objetivo) {
+//        productService.addProduct(product);
+        return Response.ok().build();
+    }
+
+    @DELETE
+    @Path("/v1/objetivo")
+    @PathParam("id")
+    @Produces("application/json")
+    public Response deleteObjetivo(Long id) {
 //        productService.addProduct(product);
         return Response.ok().build();
     }
