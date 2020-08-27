@@ -5,10 +5,15 @@ import br.com.redesenhe.services.financa.ObjetivoService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+
+import static javax.ws.rs.core.Response.Status.CREATED;
+import static javax.ws.rs.core.Response.status;
 
 @ApplicationScoped
 @Path("/api/objetivo")
@@ -38,26 +43,25 @@ public class ObjetivoResource {
 
     @POST
     @Path("/v1/objetivo")
-    @Produces("application/json")
-    public Response addObjetivo(Objetivo objetivo) {
+    @Transactional
+    public Response addObjetivo(@Valid Objetivo objetivo) {
 //        productService.addProduct(product);
-        return Response.ok().build();
+        return status(CREATED).build();
     }
 
     @PUT
-    @Path("/v1/objetivo")
-    @PathParam("id")
-    @Produces("application/json")
-    public Response updateObjetivo(Objetivo objetivo) {
+    @Path("/v1/objetivo/{id}")
+    @Transactional
+    public Response updateObjetivo(@PathParam("id") Long id, Objetivo objetivo) {
 //        productService.addProduct(product);
         return Response.ok().build();
     }
 
     @DELETE
-    @Path("/v1/objetivo")
-    @PathParam("id")
+    @Path("/v1/objetivo/{id}")
     @Produces("application/json")
-    public Response deleteObjetivo(Long id) {
+    @Transactional
+    public Response deleteObjetivo(@PathParam("id") Long id) {
 //        productService.addProduct(product);
         return Response.ok().build();
     }
